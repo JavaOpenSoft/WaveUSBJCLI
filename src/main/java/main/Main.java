@@ -1,7 +1,9 @@
 package main;
+import Core.Downloader;
 import Core.SoftwareInfo;
 import Core.Unzipper;
 
+import javax.crypto.Mac;
 import java.io.File;
 import java.io.IOException;
 import java.net.HttpURLConnection;
@@ -17,7 +19,7 @@ public class Main {
     static String USBpath = "";
     public final byte CLOVER = 1;
     public final byte SYSLINUX = 2;
-    public static void main(String[] args){
+    public static void main(String[] args) throws IOException {
 
         if(SoftwareInfo.getOS().equals("Mac OS X")
                 && (SoftwareInfo.getOSVersion().equals("11.6.8")
@@ -51,6 +53,11 @@ public class Main {
             System.out.println("3.Mac OS X");
             System.out.println("4.Custom Image File from local filesystem");
             System.out.println("Option");
+            response = sc.nextByte();
+            if(response == 3)macOS(sc);
+            else if(response == 1)Windows(sc);
+            else if(response == 2) Linux(sc);
+            else if(response == 4)others(sc);
         }
 
 
@@ -68,17 +75,39 @@ public class Main {
                 Runtime.getRuntime().exec("lblk && wmic diskdrive list\n");
                 System.out.println("Enter  the path of the USB Listed here:");
                 USBpath = sc.nextLine();
-
+                installApp(appData +"InstallAssistant.pkg");
+            }
+            else {
+                Downloader.downloadFile(new URL(Constants.macOS11),"InstallAssistant.pkg");
+                Runtime.getRuntime().exec("lblk && wmic diskdrive list\n");
+                System.out.println("Enter  the path of the USB Listed here:");
+                USBpath = sc.nextLine();
+                installApp(appData +"InstallAssistant.pkg");
+            }
+        }
+        if (response == 2) {
+            if(new File(appData + "").exists()){
+                Runtime.getRuntime().exec("lblk && wmic diskdrive list\n");
+                System.out.println("Enter  the path of the USB Listed here:");
+                USBpath = sc.nextLine();
+                installApp(appData +"Install11Assistant.pkg");
+            }
+            else {
+                Downloader.downloadFile(new URL(Constants.macOS11),"Install11Assistant.pkg");
+                Runtime.getRuntime().exec("lblk && wmic diskdrive list\n");
+                System.out.println("Enter the path of the USB Listed here:");
+                USBpath = sc.nextLine();
+                installApp(appData +"Install11Assistant.pkg");
             }
         }
     }
-    public static void Linux(){
+    public static void Linux(Scanner sc){
 
     }
-    public static void Windows(){
+    public static void Windows(Scanner sc){
 
     }
-    public static void others(){
+    public static void others(Scanner sc){
 
     }
     public static void clearScreen() throws IOException {
