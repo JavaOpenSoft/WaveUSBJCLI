@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="WaveUSBJCLI_Installer:jar2">
+    <output-path>$PROJECT_DIR$/out/artifacts/WaveUSBJCLI_Installer_jar2</output-path>
+    <root id="archive" name="WaveUSBJCLI._Installerjar">
+      <element id="module-output" name="WaveUSBJCLI" />
+    </root>
+  </artifact>
+</component>

@@ -20,9 +20,9 @@ public interface Constants {
     String manjaroXFCE="https://download.manjaro.org/xfce/21.3.4/manjaro-xfce-21.3.4-220718-linux515.iso";
     String manjaroKDE="https://download.manjaro.org/kde/21.3.4/manjaro-kde-21.3.4-220718-linux515.iso";
     String linuxMintEdge="https://mirrors.kernel.org/linuxmint/stable/20.3/linuxmint-20.3-cinnamon-64bit-edge.iso";
-    String linuxMintXFCE="https://mirrors.kernel.org/linuxmint/stable/20.3/linuxmint-20.3-xfce-64bit.iso";
+    String linuxMintXFCE="https://mirrors.kernel.org/linuxmint/stable/21/linuxmint-21-xfce-64bit.iso";
     String linuxMintCinnamon="https://mirrors.kernel.org/linuxmint/stable/21/linuxmint-21-cinnamon-64bit.iso";
-    String linuxMintMate="https://mirrors.kernel.org/linuxmint/stable/20.3/linuxmint-20.3-mate-64bit.iso";
+    String linuxMintMate="https://mirrors.kernel.org/linuxmint/stable/21/linuxmint-21-mate-64bit.iso";
     String elementaryOS="https://sgp1.dl.elementary.io/download/MTY1ODIyMTYzMg==/elementaryos-6.1-stable.20211218-rc.iso";
     String solusGnome="https://mirrors.rit.edu/solus/images/4.3/Solus-4.3-GNOME.iso";
     String solusBudgie="https://mirrors.rit.edu/solus/images/4.3/Solus-4.3-Budgie.iso";
@@ -39,7 +39,7 @@ public interface Constants {
     String appDataLinux = System.getProperty("user.home")+"/.WaveUSB/";
     String appDataWindows = System.getProperty("user.home")+"/.WaveUSB/";
     //Download link for the application binaries
-    String waveUSB_Download = ""+ Core.SoftwareInfo.getVersion();
+    String waveUSB_Download = "-"+ Core.SoftwareInfo.getVersion();
     //Download via GitHub releases
     String macOS1015 = "https://github.com/RishonDev/WaveUSB/releases/download/macOS10.15.7/macOS-Catalina.Installer-10.15.7.tar.xz";
     String macOS1014 ="https://github.com/RishonDev/WaveUSB/releases/download/macOS10.14.6/macOS-Mojave-Installer-10.14.6.tar.xz";
